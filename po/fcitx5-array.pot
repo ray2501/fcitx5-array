@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the fcitx5-array package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: fcitx5-array\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-13 18:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/engine.cpp:364
+msgid ""
+"1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek 0."
+"bopomo"
+msgstr ""
+
+#: src/arrayconfig.h:24
+msgid "Not set"
+msgstr ""
+
+#: src/arrayconfig.h:25
+msgid "Vertical"
+msgstr ""
+
+#: src/arrayconfig.h:25
+msgid "Horizontal"
+msgstr ""
+
+#: src/arrayconfig.h:32
+msgid "Use full width"
+msgstr ""
+
+#: src/arrayconfig.h:35
+msgid "QuickPhrase Trigger Key"
+msgstr ""
+
+#: src/arrayconfig.h:40
+msgid "Candidate List orientation"
+msgstr ""
+
+#: src/array.conf.in:3
+msgid "Array"
+msgstr ""
+
+#: src/array-addon.conf.in.in:3
+msgid "Array30 for Fcitx 5"
+msgstr ""
+
+#: src/array-addon.conf.in.in:4
+msgid "Array30 Input Method"
+msgstr ""

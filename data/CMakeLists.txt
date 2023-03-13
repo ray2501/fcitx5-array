@@ -1,0 +1,2 @@
+install(FILES array.db DESTINATION ${FCITX_INSTALL_PKGDATADIR}/array/)
+

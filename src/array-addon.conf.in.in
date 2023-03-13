@@ -1,0 +1,13 @@
+[Addon]
+Name=Array30 for Fcitx 5
+Comment=Array30 Input Method
+Category=InputMethod
+Version=@PROJECT_VERSION@
+Library=array
+Type=SharedLibrary
+OnDemand=True
+Configurable=True
+
+[Addon/OptionalDependencies]
+0=fullwidth
+1=quickphrase

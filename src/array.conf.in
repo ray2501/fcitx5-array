@@ -1,0 +1,7 @@
+[InputMethod]
+Name=Array
+Icon=fcitx-ibusarray
+Label=行
+LangCode=zh_TW
+Addon=array
+Configurable=True
