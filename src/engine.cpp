@@ -17,8 +17,9 @@
 #include <fcitx/inputpanel.h>
 #include <fcitx/instance.h>
 #include <fcitx/userinterfacemanager.h>
-#include <quickphrase_public.h>
 #include <fmt/format.h>
+#include <notifications_public.h>
+#include <quickphrase_public.h>
 #include <utility>
 
 #define ARRAY_SHORT_CODE_EMPTY_STRING "⎔"
@@ -45,6 +46,35 @@ public:
         std::string choiceword = text().toString();
 
         if (choiceword.compare(ARRAY_SHORT_CODE_EMPTY_STRING) != 0) {
+            if (engine_->is_special_notify()) {
+                auto ctx = engine_->context();
+                auto *state = inputContext->propertyFor(engine_->factory());
+                bool check_special = (ctx->get())
+                                         ->input_key_is_not_special(
+                                             state->getInput(), choiceword);
+
+                if (check_special) {
+                    std::vector<std::string> candidates =
+                        (ctx->get())
+                            ->get_reverted_key_candidates_from_special(
+                                choiceword);
+                    if (candidates.size() == 1) {
+                        std::string keystr = (ctx->get())->get_preedit_string(candidates[0]);
+                        std::string msg =
+                            fmt::format(_("{} : {}"), choiceword, keystr);
+
+                        std::vector<std::string> actions = {"Ok", _("Ok")};
+                        engine_->notifications()
+                            ->call<fcitx::INotifications::sendNotification>(
+                                _("fcitx5-array"), 0, "fcitx-ibusarray",
+                                _("Notify"), msg, actions, 2500,
+                                [this](const std::string &action) {
+                                    FCITX_UNUSED(action);
+                                },
+                                nullptr);
+                    }
+                }
+            }
 
             inputContext->commitString(choiceword);
         }
@@ -75,8 +105,8 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
 
         if (event.key().check(*config.quickphraseKey) &&
             engine_->quickphrase()) {
-                engine_->quickphrase()->call<fcitx::IQuickPhrase::trigger>(
-                    ic_, "", "", "", "", fcitx::Key());
+            engine_->quickphrase()->call<fcitx::IQuickPhrase::trigger>(
+                ic_, "", "", "", "", fcitx::Key());
 
             event.filterAndAccept();
             return;
@@ -263,7 +293,6 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
     return event.filterAndAccept();
 }
 
-
 void ArrayState::reset() {
     space_press_count = 0;
     wildcard_char_count = 0;
@@ -271,7 +300,6 @@ void ArrayState::reset() {
     buffer_.clear();
     updateUI();
 }
-
 
 void ArrayState::setLookupTable(bool isMain) {
     auto ctx = engine_->context();
@@ -302,7 +330,6 @@ void ArrayState::setLookupTable(bool isMain) {
     }
 }
 
-
 void ArrayState::setSymLookupTable() {
     auto ctx = engine_->context();
     const auto &config = *(engine_->config());
@@ -326,7 +353,6 @@ void ArrayState::setSymLookupTable() {
     }
 }
 
-
 void ArrayState::setPhraseLookupTable() {
     auto ctx = engine_->context();
     std::vector<std::string> words;
@@ -347,7 +373,6 @@ void ArrayState::setPhraseLookupTable() {
         ic_->inputPanel().setCandidateList(std::move(candidate));
     }
 }
-
 
 void ArrayState::updatePreedit() {
     auto ctx = engine_->context();
@@ -370,7 +395,6 @@ void ArrayState::updatePreedit() {
     ic_->updatePreedit();
 }
 
-
 void ArrayState::updateUI() {
     updatePreedit();
 
@@ -380,7 +404,6 @@ void ArrayState::updateUI() {
         setLookupTable(1);
     }
 }
-
 
 /*
  * ArrayEngine
@@ -407,6 +430,8 @@ void ArrayEngine::activate(const fcitx::InputMethodEntry &entry,
                 fcitx::StatusGroup::InputMethod, action);
         }
     }
+
+    is_special_notify_ = *config_.SpecialNotify;
 }
 
 void ArrayEngine::keyEvent(const fcitx::InputMethodEntry &entry,

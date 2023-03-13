@@ -8,7 +8,7 @@ include(GNUInstallDirs)
 include(ECMUninstallTarget)
 
 find_package(Fcitx5Core REQUIRED)
-find_package(Fcitx5Module REQUIRED COMPONENTS QuickPhrase)
+find_package(Fcitx5Module REQUIRED COMPONENTS QuickPhrase Notifications)
 find_package(SQLite3 REQUIRED)
 find_package(Gettext REQUIRED)
 find_package(fmt REQUIRED)

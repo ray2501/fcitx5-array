@@ -38,6 +38,8 @@ FCITX_CONFIGURATION(
                                 fcitx::CandidateLayoutHintI18NAnnotation>
         candidateLayoutHint{this, "CandidateLayoutHint",
                             _("Candidate List orientation"),
-                            fcitx::CandidateLayoutHint::NotSet};);
+                            fcitx::CandidateLayoutHint::NotSet};
+    fcitx::Option<bool> SpecialNotify{this, "SpecialNotify", _("Notify special code"),
+                                     false};);
 } // namespace Array
 #endif // FCITX5_ARRAY_CONFIG_H

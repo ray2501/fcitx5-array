@@ -1,5 +1,5 @@
 add_library(array MODULE engine.cpp array.cpp)
-target_link_libraries(array Fcitx5::Core Fcitx5::Config Fcitx5::Module::QuickPhrase ${SQLite3_LIBRARIES})
+target_link_libraries(array Fcitx5::Core Fcitx5::Config Fcitx5::Module::QuickPhrase Fcitx5::Module::Notifications fmt::fmt ${SQLite3_LIBRARIES})
 target_include_directories(array PRIVATE ${PROJECT_BINARY_DIR})
 set_target_properties(array PROPERTIES PREFIX "")
 install(TARGETS array DESTINATION "${FCITX_INSTALL_LIBDIR}/fcitx5")
