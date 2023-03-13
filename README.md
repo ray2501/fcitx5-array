@@ -19,7 +19,7 @@ Array 30 input method engine for Fcitx 5 project
 並且嘗試支援下列的功能：
 - 詞彙輸入（詞庫來自
 [array30 行列輸入法（30 鍵版）表格](https://github.com/gontera/array30)，
-詞彙以 ' 作尾碼
+詞彙以 ' 作尾碼）
 - 支援自訂按鍵可以暫時使用 Fcitx 5 QuickPhrase 輸入（建議使用 Super + `）
 
 與 ibus-array 相同，輸入法表格使用 SQLite3。授權方式也一樣為 GPL2+。
