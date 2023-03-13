@@ -67,7 +67,7 @@ public:
                         engine_->notifications()
                             ->call<fcitx::INotifications::sendNotification>(
                                 _("fcitx5-array"), 0, "fcitx-ibusarray",
-                                _("Notify"), msg, actions, 2500,
+                                _("Notify special code"), msg, actions, 2500,
                                 [this](const std::string &action) {
                                     FCITX_UNUSED(action);
                                 },
