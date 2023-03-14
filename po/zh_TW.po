@@ -31,7 +31,7 @@ msgstr ""
 
 #: src/engine.cpp:70 src/arrayconfig.h:42
 msgid "Notify special code"
-msgstr ""
+msgstr "特別碼通知"
 
 #: src/engine.cpp:390
 msgid ""
