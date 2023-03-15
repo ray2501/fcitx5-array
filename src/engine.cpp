@@ -59,7 +59,8 @@ public:
                             ->get_reverted_key_candidates_from_special(
                                 choiceword);
                     if (candidates.size() == 1) {
-                        std::string keystr = (ctx->get())->get_preedit_string(candidates[0]);
+                        std::string keystr =
+                            (ctx->get())->get_preedit_string(candidates[0]);
                         std::string msg =
                             fmt::format(_("{} : {}"), choiceword, keystr);
 
@@ -254,12 +255,14 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
         updatePreedit();
         setSymLookupTable();
         return event.filterAndAccept();
-    } else if (auto candidateList = ic_->inputPanel().candidateList()) {
-        int idx = event.key().keyListIndex(selectionKeys());
-        if (idx >= 0 && idx < candidateList->size()) {
-            event.accept();
-            candidateList->candidate(idx).select(ic_);
-            return;
+    } else if (event.key().isDigit()) {
+        if (auto candidateList = ic_->inputPanel().candidateList()) {
+            int idx = event.key().keyListIndex(selectionKeys());
+            if (idx >= 0 && idx < candidateList->size()) {
+                event.accept();
+                candidateList->candidate(idx).select(ic_);
+                return event.filterAndAccept();
+            }
         }
     }
 
