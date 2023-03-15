@@ -261,8 +261,9 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
             if (idx >= 0 && idx < candidateList->size()) {
                 event.accept();
                 candidateList->candidate(idx).select(ic_);
-                return event.filterAndAccept();
             }
+
+            return event.filterAndAccept();
         }
     }
 
