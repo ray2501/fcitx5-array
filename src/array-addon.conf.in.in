@@ -10,5 +10,6 @@ Configurable=True
 
 [Addon/OptionalDependencies]
 0=fullwidth
-1=quickphrase
-2=notifications
+1=chttrans
+2=quickphrase
+3=notifications

@@ -434,6 +434,14 @@ void ArrayEngine::activate(const fcitx::InputMethodEntry &entry,
     FCITX_UNUSED(entry);
     auto *inputContext = event.inputContext();
 
+    if (*config_.useChttrans && chttrans()) {
+        if (auto *action =
+                instance_->userInterfaceManager().lookupAction("chttrans")) {
+            inputContext->statusArea().addAction(
+                fcitx::StatusGroup::InputMethod, action);
+        }
+    }
+
     if (*config_.useFullWidth && fullwidth()) {
         if (auto *action =
                 instance_->userInterfaceManager().lookupAction("fullwidth")) {

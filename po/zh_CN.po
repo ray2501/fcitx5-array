@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-15 20:28+0800\n"
+"POT-Creation-Date: 2023-03-15 22:28+0800\n"
 "PO-Revision-Date: 2023-03-13 09:54+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "fcitx5-array"
 msgstr ""
 
-#: src/engine.cpp:71 src/arrayconfig.h:42
+#: src/engine.cpp:71 src/arrayconfig.h:44
 msgid "Notify special code"
 msgstr "特别码通知"
 
@@ -55,11 +55,15 @@ msgstr ""
 msgid "Use full width"
 msgstr ""
 
-#: src/arrayconfig.h:35
+#: src/arrayconfig.h:34
+msgid "Use chttrans"
+msgstr ""
+
+#: src/arrayconfig.h:37
 msgid "QuickPhrase Trigger Key"
 msgstr ""
 
-#: src/arrayconfig.h:40
+#: src/arrayconfig.h:42
 msgid "Candidate List orientation"
 msgstr ""
 

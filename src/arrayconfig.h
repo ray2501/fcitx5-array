@@ -31,6 +31,8 @@ FCITX_CONFIGURATION(
     FcitxArrayConfig,
     fcitx::Option<bool> useFullWidth{this, "UseFullWidth", _("Use full width"),
                                      true};
+    fcitx::Option<bool> useChttrans{this, "UseChttrans", _("Use chttrans"),
+                                     false};
     fcitx::Option<fcitx::Key, fcitx::KeyConstrain> quickphraseKey{
         this, "QuickPhraseKey", _("QuickPhrase Trigger Key"),
         fcitx::Key(FcitxKey_grave), fcitx::KeyConstrain{fcitx::KeyConstrainFlag::AllowModifierLess}};

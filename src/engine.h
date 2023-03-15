@@ -80,6 +80,7 @@ public:
     auto is_special_notify() const { return is_special_notify_; }
 
     FCITX_ADDON_DEPENDENCY_LOADER(fullwidth, instance_->addonManager());
+    FCITX_ADDON_DEPENDENCY_LOADER(chttrans, instance_->addonManager());
     FCITX_ADDON_DEPENDENCY_LOADER(quickphrase, instance_->addonManager());
     FCITX_ADDON_DEPENDENCY_LOADER(notifications, instance_->addonManager());
 
