@@ -277,7 +277,14 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
             if (auto candidateList = ic_->inputPanel().candidateList()) {
                 event.accept();
                 candidateList->candidate(0).select(ic_);
-                return;
+
+                /*
+                 * Still need to handle press key after space.
+                 */
+                buffer_.clear();
+                buffer_.type(event.key().sym());
+                updateUI();
+                return event.filterAndAccept();
             }
         }
 
