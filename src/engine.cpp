@@ -280,11 +280,9 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
 
                 /*
                  * Still need to handle press key after space.
+                 * Clear buffer.
                  */
                 buffer_.clear();
-                buffer_.type(event.key().sym());
-                updateUI();
-                return event.filterAndAccept();
             }
         }
 
