@@ -22,6 +22,7 @@ Array 30 input method engine for Fcitx 5 project
 詞彙以 ' 作尾碼）
 - 支援自訂按鍵可以暫時使用 Fcitx 5 QuickPhrase 輸入（建議使用 Super + `）
 - 支援 Fcitx 5 chttrans 模組（繁簡轉換），預設設為 disable
+- 使用 Fcitx 5 notifications 模組實作特別碼通知，預設為 disable
 
 與 ibus-array 相同，輸入法表格使用 SQLite3。授權方式也一樣為 GPL2+。
 
