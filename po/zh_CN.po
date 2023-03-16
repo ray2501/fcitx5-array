@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-15 22:28+0800\n"
+"POT-Creation-Date: 2023-03-16 23:14+0800\n"
 "PO-Revision-Date: 2023-03-13 09:54+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Notify special code"
 msgstr "特别码通知"
 
-#: src/engine.cpp:401
+#: src/engine.cpp:418
 msgid ""
 "1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek 0."
 "bopomo"
