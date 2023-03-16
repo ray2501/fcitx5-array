@@ -167,8 +167,27 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
         if (buffer_.empty()) {
             return;
         } else {
+            /*
+             * The idea is if we press the phrase key,
+             * the behavior should be like press space first time.
+             */
+            if (space_press_count == 0) {
+                space_press_count++;
+            }
+
             updatePreedit();
             setPhraseLookupTable();
+
+            /*
+             * Check candidate list, if we only have 1 item then commit it.
+             */
+            if (auto candidateList = ic_->inputPanel().candidateList()) {
+                if (candidateList->size() == 1) {
+                    event.accept();
+                    candidateList->candidate(0).select(ic_);
+                }
+            }
+
             return event.filterAndAccept();
         }
     }
