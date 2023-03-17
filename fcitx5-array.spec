@@ -3,7 +3,7 @@
 #
 
 Name:           fcitx5-array
-Version:        0.7.1
+Version:        0.7.2
 Release:        0
 Summary:        Array 30 input method engine for Fcitx5
 License:        GPL-2.0-or-later
