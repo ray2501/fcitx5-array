@@ -62,7 +62,7 @@ public:
                         std::string keystr =
                             (ctx->get())->get_preedit_string(candidates[0]);
                         std::string msg =
-                            fmt::format(_("{} : {}"), choiceword, keystr);
+                            fmt::format(_("{0}: {1}"), choiceword, keystr);
 
                         std::vector<std::string> actions = {"Ok", _("Ok")};
                         engine_->notifications()
@@ -418,6 +418,18 @@ void ArrayState::updatePreedit() {
         ic_->inputPanel().setAuxDown(
             fcitx::Text(_("1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit "
                           "7.table 8.roman 9.greek 0.bopomo")));
+    }
+
+    if (input.length() == 2) {
+        std::vector<std::string> result =
+            (ctx->get())
+                ->get_reverted_char_candidates_from_special(input);
+
+        if (result.size() == 1) {
+            std::string msg =
+                fmt::format(_("{0}: {1}"), result[0], preeditstring);
+            ic_->inputPanel().setAuxDown(fcitx::Text(msg));
+        }
     }
 
     ic_->updateUserInterface(fcitx::UserInterfaceComponent::InputPanel);
