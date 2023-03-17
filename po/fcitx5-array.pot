@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-16 23:14+0800\n"
+"POT-Creation-Date: 2023-03-17 17:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/engine.cpp:65
-msgid "{} : {}"
+#: src/engine.cpp:65 src/engine.cpp:430
+msgid "{0}: {1}"
 msgstr ""
 
 #: src/engine.cpp:67
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Notify special code"
 msgstr ""
 
-#: src/engine.cpp:418
+#: src/engine.cpp:419
 msgid ""
 "1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek 0."
 "bopomo"
