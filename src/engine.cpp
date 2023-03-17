@@ -201,6 +201,7 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
             if (currentstr.back() == '?')
                 wildcard_char_count--;
 
+            space_press_count = 0; // I think it also should be undo
             buffer_.backspace();
             updateUI();
             return event.filterAndAccept();
