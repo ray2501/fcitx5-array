@@ -50,6 +50,7 @@ const char *valid_key_map[] = {
     "0v", ///
     "0-", //;
     " ?", //?
+    " *", //*
 };
 
 ArrayContext::ArrayContext() {
@@ -93,6 +94,8 @@ std::string ArrayContext::get_preedit_string(std::string preedit) {
             index = 29;
         } else if (c == '?') {
             index = 30;
+        } else if (c == '*') {
+            index = 31;
         }
 
         if (index >= 0) {

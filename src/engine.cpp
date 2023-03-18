@@ -198,7 +198,7 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
             return;
         } else {
             std::string currentstr = buffer_.userInput();
-            if (currentstr.back() == '?')
+            if (currentstr.back() == '?' || currentstr.back() == '*')
                 wildcard_char_count--;
 
             space_press_count = 0; // I think it also should be undo
@@ -291,7 +291,8 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
         event.key().check(FcitxKey_comma) ||
         event.key().check(FcitxKey_slash) ||
         event.key().check(FcitxKey_semicolon) ||
-        event.key().check(FcitxKey_question)) {
+        event.key().check(FcitxKey_question) ||
+        event.key().check(FcitxKey_asterisk)) {
 
         if (space_press_count == 1) {
             if (auto candidateList = ic_->inputPanel().candidateList()) {
@@ -311,6 +312,14 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
 
         if (event.key().check(FcitxKey_question)) {
             wildcard_char_count++;
+        }
+
+        if (event.key().check(FcitxKey_asterisk)) {
+            if (buffer_.empty()) {
+                return;
+            } else {
+                wildcard_char_count++;
+            }
         }
 
         buffer_.type(event.key().sym());
@@ -422,8 +431,7 @@ void ArrayState::updatePreedit() {
 
     if (input.length() == 2) {
         std::vector<std::string> result =
-            (ctx->get())
-                ->get_reverted_char_candidates_from_special(input);
+            (ctx->get())->get_reverted_char_candidates_from_special(input);
 
         if (result.size() == 1) {
             std::string msg =
@@ -439,7 +447,8 @@ void ArrayState::updatePreedit() {
 void ArrayState::updateUI() {
     updatePreedit();
 
-    if (buffer_.size() <= 2 && space_press_count == 0) {
+    if (buffer_.size() <= 2 && space_press_count == 0 &&
+        wildcard_char_count == 0) {
         setLookupTable(0);
     } else {
         setLookupTable(1);

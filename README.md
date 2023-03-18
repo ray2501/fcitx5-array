@@ -14,9 +14,10 @@ Array 30 input method engine for Fcitx 5 project
 並自 [ibus-array](https://github.com/lexical/ibus-array) 移植下列功能：
 - 一級簡碼與二級簡碼
 - 符號輸入（「W+數字鍵」符號選單）
-- 查詢鍵「?」
+- 查詢鍵「?」，代表任意一個行列 30 鍵
 
 並且嘗試支援下列的功能：
+- 查詢鍵「*」（目前本專案的實作限制為不能作為第一個按鍵）
 - 詞彙輸入（詞庫來自
 [array30 行列輸入法（30 鍵版）表格](https://github.com/gontera/array30)，
 詞彙以 ' 作尾碼）
