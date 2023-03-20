@@ -41,31 +41,31 @@ msgstr "1.标点 2.括号 3.符号 4.数学 5.方向 6.单位 7.图表 8.顺序 
 
 #: src/arrayconfig.h:24
 msgid "Not set"
-msgstr ""
+msgstr "不设置"
 
 #: src/arrayconfig.h:25
 msgid "Vertical"
-msgstr ""
+msgstr "垂直"
 
 #: src/arrayconfig.h:25
 msgid "Horizontal"
-msgstr ""
+msgstr "水平"
 
 #: src/arrayconfig.h:32
 msgid "Use full width"
-msgstr ""
+msgstr "使用全形字元模组"
 
 #: src/arrayconfig.h:34
 msgid "Use chttrans"
-msgstr ""
+msgstr "使用中文转换模组"
 
 #: src/arrayconfig.h:37
 msgid "QuickPhrase Trigger Key"
-msgstr ""
+msgstr "快捷输入触发键"
 
 #: src/arrayconfig.h:42
 msgid "Candidate List orientation"
-msgstr ""
+msgstr "侯选字清单方向"
 
 #: src/array.conf.in:3
 msgid "Array"
