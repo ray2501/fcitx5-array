@@ -13,6 +13,7 @@
 #include "engine.h"
 
 #include <fcitx-config/iniparser.h>
+#include <fcitx-utils/utf8.h>
 #include <fcitx/candidatelist.h>
 #include <fcitx/inputpanel.h>
 #include <fcitx/instance.h>
@@ -98,12 +99,12 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
         return;
     }
 
+    const auto &config = *(engine_->config());
+
     /*
      * Support Fcitx 5 QuickPhrase (triggered by hot key)
      */
     if (buffer_.empty()) {
-        const auto &config = *(engine_->config());
-
         if (event.key().check(*config.quickphraseKey) &&
             engine_->quickphrase()) {
             engine_->quickphrase()->call<fcitx::IQuickPhrase::trigger>(
@@ -111,6 +112,46 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
 
             event.filterAndAccept();
             return;
+        }
+    }
+
+    /*
+     * Support lookup array30 key
+     */
+    if (event.key().checkKeyList(*config.lookupArray)) {
+        if (ic_->capabilityFlags().test(
+                fcitx::CapabilityFlag::SurroundingText) &&
+            ic_->surroundingText().isValid()) {
+            auto text = ic_->surroundingText().selectedText();
+            if (!text.empty()) {
+                auto range = fcitx::utf8::MakeUTF8CharRange(text);
+                auto ctx = engine_->context();
+
+                // Just get the first word and handle
+                std::string word = std::string(std::begin(range).view());
+                std::string msg =
+                    fmt::format(_("Lookup array code: {0}"), word);
+                ic_->inputPanel().setAuxUp(fcitx::Text(msg));
+
+                std::vector<std::string> result =
+                    (ctx->get())->get_reverted_key_candidates_from_main(word);
+
+                std::string keymessage;
+                if (result.size() > 0) {
+                    for (auto key = result.begin(); key != result.end();
+                         key++) {
+                        std::string arraykey =
+                            (ctx->get())->get_preedit_string(*key);
+                        keymessage.append("  ");
+                        keymessage.append(arraykey);
+                    }
+                }
+
+                ic_->inputPanel().setAuxDown(fcitx::Text(keymessage));
+                ic_->updatePreedit();
+                ic_->updateUserInterface(
+                    fcitx::UserInterfaceComponent::InputPanel);
+            }
         }
     }
 
@@ -260,10 +301,11 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
     }
 
     if (event.key().check(FcitxKey_Escape)) {
+        reset();
+
         if (buffer_.empty()) {
             return;
         } else {
-            reset();
             return event.filterAndAccept();
         }
     }

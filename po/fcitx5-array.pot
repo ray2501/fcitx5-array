@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-20 09:41+0800\n"
+"POT-Creation-Date: 2023-03-20 11:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/engine.cpp:65 src/engine.cpp:438
+#: src/engine.cpp:66 src/engine.cpp:480
 msgid "{0}: {1}"
 msgstr ""
 
-#: src/engine.cpp:67
+#: src/engine.cpp:68
 msgid "Ok"
 msgstr ""
 
-#: src/engine.cpp:70
+#: src/engine.cpp:71
 msgid "fcitx5-array"
 msgstr ""
 
-#: src/engine.cpp:71 src/arrayconfig.h:44
+#: src/engine.cpp:72 src/arrayconfig.h:51
 msgid "Notify special code"
 msgstr ""
 
-#: src/engine.cpp:428
+#: src/engine.cpp:133
+msgid "Lookup array code: {0}"
+msgstr ""
+
+#: src/engine.cpp:470
 msgid ""
 "1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek 0."
 "bopomo"
@@ -63,8 +67,12 @@ msgstr ""
 msgid "QuickPhrase Trigger Key"
 msgstr ""
 
-#: src/arrayconfig.h:42
+#: src/arrayconfig.h:43
 msgid "Candidate List orientation"
+msgstr ""
+
+#: src/arrayconfig.h:47
+msgid "Lookup Array"
 msgstr ""
 
 #: src/array.conf.in:3

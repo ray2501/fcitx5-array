@@ -200,6 +200,28 @@ ArrayContext::get_candidates_from_phrase(std::string keys) {
 }
 
 std::vector<std::string>
+ArrayContext::get_reverted_key_candidates_from_main(std::string ch) {
+    std::vector<std::string> result;
+    sqlite3_stmt *stmt;
+
+    int retcode;
+    retcode = sqlite3_prepare_v2(this->conn,
+                                 "SELECT keys FROM main WHERE cat!=11 AND ch=?",
+                                 -1, &stmt, NULL);
+    if (retcode == SQLITE_OK) {
+        sqlite3_bind_text(stmt, 1, ch.c_str(), -1, SQLITE_TRANSIENT);
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            const char *cha = (const char *)sqlite3_column_text(stmt, 0);
+            result.push_back(std::string(cha));
+        }
+    }
+    sqlite3_reset(stmt);
+    sqlite3_finalize(stmt);
+
+    return result;
+}
+
+std::vector<std::string>
 ArrayContext::get_reverted_key_candidates_from_special(std::string ch) {
     std::vector<std::string> result;
     sqlite3_stmt *stmt;

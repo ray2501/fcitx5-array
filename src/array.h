@@ -33,6 +33,8 @@ public:
     std::vector<std::string> get_candidates_from_special(std::string keys);
     std::vector<std::string> get_candidates_from_phrase(std::string keys);
     std::vector<std::string>
+    get_reverted_key_candidates_from_main(std::string ch);
+    std::vector<std::string>
     get_reverted_key_candidates_from_special(std::string ch);
     std::vector<std::string>
     get_reverted_char_candidates_from_special(std::string keys);

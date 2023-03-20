@@ -32,16 +32,22 @@ FCITX_CONFIGURATION(
     fcitx::Option<bool> useFullWidth{this, "UseFullWidth", _("Use full width"),
                                      true};
     fcitx::Option<bool> useChttrans{this, "UseChttrans", _("Use chttrans"),
-                                     false};
+                                    false};
     fcitx::Option<fcitx::Key, fcitx::KeyConstrain> quickphraseKey{
         this, "QuickPhraseKey", _("QuickPhrase Trigger Key"),
-        fcitx::Key(FcitxKey_grave), fcitx::KeyConstrain{fcitx::KeyConstrainFlag::AllowModifierLess}};
+        fcitx::Key(FcitxKey_grave),
+        fcitx::KeyConstrain{fcitx::KeyConstrainFlag::AllowModifierLess}};
     fcitx::OptionWithAnnotation<fcitx::CandidateLayoutHint,
                                 fcitx::CandidateLayoutHintI18NAnnotation>
         candidateLayoutHint{this, "CandidateLayoutHint",
                             _("Candidate List orientation"),
                             fcitx::CandidateLayoutHint::NotSet};
-    fcitx::Option<bool> SpecialNotify{this, "SpecialNotify", _("Notify special code"),
-                                     false};);
+    fcitx::KeyListOption lookupArray{this,
+                                     "LookupArrayKey",
+                                     _("Lookup Array"),
+                                     {fcitx::Key("Control+Alt+E")},
+                                     fcitx::KeyListConstrain()};
+    fcitx::Option<bool> SpecialNotify{this, "SpecialNotify",
+                                      _("Notify special code"), false};);
 } // namespace Array
 #endif // FCITX5_ARRAY_CONFIG_H
