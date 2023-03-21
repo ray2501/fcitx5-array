@@ -1,7 +1,7 @@
 # fcitx5-array
 
 Array 30 input method engine for Fcitx 5 project
-Fcitx 5 行列三十輸入法引擎計畫
+（Fcitx 5 行列三十輸入法引擎計畫）
 
 [fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)
 已有包含行列輸入法的表格可以使用，但沒有提供一級簡碼、二級簡碼以及符號輸入
