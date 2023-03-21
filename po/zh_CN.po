@@ -57,7 +57,7 @@ msgstr "水平"
 
 #: src/arrayconfig.h:32
 msgid "Use full width"
-msgstr "使用全形字元模组"
+msgstr "使用全角字符模组"
 
 #: src/arrayconfig.h:34
 msgid "Use chttrans"
