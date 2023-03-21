@@ -22,7 +22,7 @@ Array 30 input method engine for Fcitx 5 project
 - 詞彙輸入（詞庫來自
 [array30 行列輸入法（30 鍵版）表格](https://github.com/gontera/array30)，
 詞彙以 ' 作尾碼）
-- 支援自訂按鍵可以暫時使用 Fcitx 5 QuickPhrase 輸入（建議使用 Super + `）
+- 支援自訂按鍵可以暫時使用 Fcitx 5 QuickPhrase 輸入（預設值為 \`，建議可以使用 Super + \`）
 - 支援 Fcitx 5 chttrans 模組（繁簡轉換），預設設為 disable
 - 嘗試當應用程式支援 surrounding text，支援使用者使用 Ctrl+Alt+E 呼叫反查
 行列碼功能（按鍵可自訂，目前限制只能查詢已選字中的第一個字）
