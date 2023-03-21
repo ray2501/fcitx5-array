@@ -65,7 +65,7 @@ msgstr "使用中文轉換模組"
 
 #: src/arrayconfig.h:37
 msgid "QuickPhrase Trigger Key"
-msgstr "快捷輸入觸發鍵"
+msgstr "快速輸入的觸發鍵"
 
 #: src/arrayconfig.h:43
 msgid "Candidate List orientation"
