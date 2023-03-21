@@ -1,6 +1,7 @@
 # fcitx5-array
 
 Array 30 input method engine for Fcitx 5 project
+Fcitx 5 行列三十輸入法引擎計畫
 
 [fcitx5-table-extra](https://github.com/fcitx/fcitx5-table-extra)
 已有包含行列輸入法的表格可以使用，但沒有提供一級簡碼、二級簡碼以及符號輸入
@@ -16,9 +17,8 @@ Array 30 input method engine for Fcitx 5 project
 - 符號輸入（「W+數字鍵」符號選單）
 - 查詢鍵「?」，代表任意一個行列 30 鍵
 
-並且嘗試支援下列的功能：
-- 查詢鍵「*」，代表零個或者更多個行列 30 鍵（目前本專案的實作限制為不能
-作為第一個按鍵）
+並且支援下列的功能：
+- 查詢鍵「*」，代表零個、一個或者更多個行列 30 鍵（目前的實作限制為不能作為第一個按鍵）
 - 詞彙輸入（詞庫來自
 [array30 行列輸入法（30 鍵版）表格](https://github.com/gontera/array30)，
 詞彙以 ' 作尾碼）
@@ -35,12 +35,22 @@ Array 30 input method engine for Fcitx 5 project
 Ubuntu Mate 22.04 LTS 的環境，在設好 Language Support 以後，
 確定有安裝 Fcitx5，使用 `im-config -n fcitx5` 設定為預設輸入法。
 
+Fedora Xfce 37 的環境，沒有安裝 Fcitx5 的話使用下列的指令安裝（指令包含安裝輸入法）：
+```
+sudo dnf install fcitx5 fcitx5-autostart fcitx5-table-extra fcitx5-zhuyin fcitx5-chewing
+```
+使用 `im-chooser` 選擇 fcitx5。
+
 openSUSE Leap 15.4 目前 Fcitx 預設安裝的版本為 4，如果要使用 Fcitx 5，需要使用下列的指令安裝
 （指令包含安裝輸入法）：
 ```
 sudo zypper addrepo https://download.opensuse.org/repositories/M17N/15.4/M17N.repo
 sudo zypper refresh
 sudo zypper install fcitx5 fcitx5-table-extra fcitx5-zhuyin fcitx5-chewing
+```
+在家目錄下建立 .i18n 檔案，加入下面的內容設定預設輸入法：
+```
+export INPUT_METHOD=fcitx5
 ```
 
 fcitx5-array 採用 CMake，
@@ -49,6 +59,11 @@ fcitx5-array 採用 CMake，
 sudo apt install cmake extra-cmake-modules gettext \
     libfcitx5core-dev  fcitx5-modules-dev libfcitx5config-dev libfcitx5utils-dev \
     libsqlite3-dev libfmt-dev
+```
+如果是 Fedora Xfce 37 需要安裝下列的開發用套件：
+```
+sudo dnf install cmake extra-cmake-modules gettext \
+    fcitx5-devel fcitx5-chinese-addons-devel sqlite-devel fmt-devel
 ```
 如果是 openSUSE 需要安裝下列的開發用套件：
 ```
@@ -68,6 +83,7 @@ sudo make install
 ```
 sudo update-icon-caches /usr/share/icons/*
 ```
+
 如果要移除，在 build 目錄下執行以下指令：
 ```
 sudo make uninstall
