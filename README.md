@@ -30,8 +30,13 @@ Array 30 input method engine for Fcitx 5 project
 
 與 ibus-array 相同，輸入法表格使用 SQLite3。授權方式也一樣為 GPL2+。
 
-目前只有在 openSUSE 上編譯並且測試過。openSUSE Leap 15.4 目前 Fcitx 預設安裝的版本為 4，
-如果要使用 Fcitx 5，需要使用下列的指令安裝（指令包含安裝輸入法）：
+## 安裝
+
+Ubuntu Mate 22.04 LTS 的環境，在設好 Language Support 以後，
+確定有安裝 Fcitx5，使用 `im-config -n fcitx5` 設定為預設輸入法。
+
+openSUSE Leap 15.4 目前 Fcitx 預設安裝的版本為 4，如果要使用 Fcitx 5，需要使用下列的指令安裝
+（指令包含安裝輸入法）：
 ```
 sudo zypper addrepo https://download.opensuse.org/repositories/M17N/15.4/M17N.repo
 sudo zypper refresh
@@ -39,11 +44,18 @@ sudo zypper install fcitx5 fcitx5-table-extra fcitx5-zhuyin fcitx5-chewing
 ```
 
 fcitx5-array 採用 CMake，
-要自行編譯的話以 openSUSE 而言還需要安裝下列的開發用套件：
+要自行編譯的話在 Ubuntu Mate 22.04 LTS 需要安裝下列的開發用套件：
 ```
-sudo zypper in cmake extra-cmake-modules \
+sudo apt install cmake extra-cmake-modules gettext \
+    libfcitx5core-dev  fcitx5-modules-dev libfcitx5config-dev libfcitx5utils-dev \
+    libsqlite3-dev libfmt-dev
+```
+如果是 openSUSE 需要安裝下列的開發用套件：
+```
+sudo zypper in cmake extra-cmake-modules gettext \
     fcitx5-devel fcitx5-chinese-addons-devel sqlite3-devel fmt-devel
 ```
+
 然後在專案的目錄下執行以下指令：
 ```
 mkdir -p build
@@ -51,6 +63,10 @@ cd build
 cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
+```
+在 Ubuntu Mate 22.04 LTS 安裝後，需要執行以下指令，fcitx5-array icon 才會正確出現在 fcitx5 選單中。
+```
+sudo update-icon-caches /usr/share/icons/*
 ```
 如果要移除，在 build 目錄下執行以下指令：
 ```
