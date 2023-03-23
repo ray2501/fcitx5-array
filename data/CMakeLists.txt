@@ -1,2 +1,2 @@
 install(FILES array.db DESTINATION ${FCITX_INSTALL_PKGDATADIR}/array/)
-
+install(FILES AssociatedPhrases.mb DESTINATION ${FCITX_INSTALL_PKGDATADIR}/data/)

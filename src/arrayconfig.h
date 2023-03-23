@@ -33,6 +33,8 @@ FCITX_CONFIGURATION(
                                      true};
     fcitx::Option<bool> useChttrans{this, "UseChttrans", _("Use chttrans"),
                                     false};
+    fcitx::Option<bool> useAssociation{this, "UseAssociation",
+                                       _("Use Associated Phrases"), false};
     fcitx::Option<fcitx::Key, fcitx::KeyConstrain> quickphraseKey{
         this, "QuickPhraseKey", _("QuickPhrase Trigger Key"),
         fcitx::Key(FcitxKey_grave),

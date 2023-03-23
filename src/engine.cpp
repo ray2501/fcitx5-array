@@ -531,6 +531,14 @@ void ArrayEngine::activate(const fcitx::InputMethodEntry &entry,
         }
     }
 
+    if (*config_.useAssociation && association()) {
+        if (auto *action =
+                instance_->userInterfaceManager().lookupAction("association")) {
+            inputContext->statusArea().addAction(
+                fcitx::StatusGroup::InputMethod, action);
+        }
+    }
+
     is_special_notify_ = *config_.SpecialNotify;
 }
 

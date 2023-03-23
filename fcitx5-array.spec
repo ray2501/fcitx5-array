@@ -6,7 +6,7 @@ Name:           fcitx5-array
 Version:        0.8.1
 Release:        0
 Summary:        Array 30 input method engine for Fcitx5
-License:        GPL-2.0-or-later
+License:        GPL-2.0-or-later and LGPL-2.1-or-later
 URL:            https://github.com/ray2501/fcitx5-ray2501
 Source:         %{name}-%{version}.tar.gz
 BuildRequires:  cmake
@@ -42,13 +42,20 @@ Array 30 input method engine for Fcitx5 project.
 %files -f %{name}.lang
 %license LICENSES
 %doc README.md
+%{_fcitx5_libdir}/libassociation.so
+%{_fcitx5_addondir}/association.conf
 %{_fcitx5_libdir}/array.so
 %{_fcitx5_addondir}/array.conf
 %{_fcitx5_imconfdir}/array.conf
 %{_fcitx5_imconfdir}/array.conf
 %{_fcitx5_datadir}/array/array.db
+%{_fcitx5_datadir}/data/AssociatedPhrases.mb
 %{_datadir}/icons/hicolor/*/apps/org.fcitx.Fcitx5.fcitx-ibusarray*
 %{_datadir}/icons/hicolor/*/apps/fcitx-ibusarray*
+%{_datadir}/icons/hicolor/*/apps/org.fcitx.Fcitx5.fcitx-association-active*
+%{_datadir}/icons/hicolor/*/apps/fcitx-association-active*
+%{_datadir}/icons/hicolor/*/apps/org.fcitx.Fcitx5.fcitx-association-inactive*
+%{_datadir}/icons/hicolor/*/apps/fcitx-association-inactive*
 
 %changelog
 

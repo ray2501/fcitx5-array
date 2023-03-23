@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-20 11:08+0800\n"
+"POT-Creation-Date: 2023-03-23 19:53+0800\n"
 "PO-Revision-Date: 2023-03-13 09:54+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "fcitx5-array"
 msgstr ""
 
-#: src/engine.cpp:72 src/arrayconfig.h:51
+#: src/engine.cpp:72 src/arrayconfig.h:53
 msgid "Notify special code"
 msgstr "特别码通知"
 
@@ -64,16 +64,36 @@ msgid "Use chttrans"
 msgstr "使用中文转换模组"
 
 #: src/arrayconfig.h:37
+msgid "Use Associated Phrases"
+msgstr "使用联想词模组"
+
+#: src/arrayconfig.h:39
 msgid "QuickPhrase Trigger Key"
 msgstr "快速输入的触发键"
 
-#: src/arrayconfig.h:43
+#: src/arrayconfig.h:45
 msgid "Candidate List orientation"
 msgstr "侯选字列表方向"
 
-#: src/arrayconfig.h:47
+#: src/arrayconfig.h:49
 msgid "Lookup Array"
 msgstr "反查行列码"
+
+#: modules/association/association.cpp:290
+msgid "Associated Phrases: "
+msgstr "联想词： "
+
+#: modules/association/association.h:18
+msgid "Toggle key"
+msgstr "切换键"
+
+#: modules/association/association.h:28
+msgid "Enable Associated Phrases"
+msgstr "使用联想词"
+
+#: modules/association/association.h:29
+msgid "Disable Associated Phrases"
+msgstr "禁用联想词"
 
 #: src/array.conf.in:3
 msgid "Array"
@@ -86,3 +106,7 @@ msgstr "Fcitx 5 的行列三十输入法"
 #: src/array-addon.conf.in.in:4
 msgid "Array30 Input Method"
 msgstr "行列三十输入法"
+
+#: modules/association/association.conf.in.in:3
+msgid "Associated Phrases"
+msgstr "联想词"

@@ -18,8 +18,9 @@ include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cma
 add_definitions(-DFCITX_GETTEXT_DOMAIN=\"fcitx5-array\")
 fcitx5_add_i18n_definition()
 
-add_subdirectory(po)
+add_subdirectory(modules)
 add_subdirectory(src)
+add_subdirectory(po)
 add_subdirectory(data)
 add_subdirectory(icon)
 

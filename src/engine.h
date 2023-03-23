@@ -83,6 +83,7 @@ public:
     FCITX_ADDON_DEPENDENCY_LOADER(chttrans, instance_->addonManager());
     FCITX_ADDON_DEPENDENCY_LOADER(quickphrase, instance_->addonManager());
     FCITX_ADDON_DEPENDENCY_LOADER(notifications, instance_->addonManager());
+    FCITX_ADDON_DEPENDENCY_LOADER(association, instance_->addonManager());
 
 private:
     fcitx::Instance *instance_;

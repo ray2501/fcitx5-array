@@ -7,7 +7,8 @@ xgettext \
 	-k_ \
 	-kN_ \
 	-o po/fcitx5-array.pot \
-	src/engine.cpp src/engine.h src/arrayconfig.h
+	src/engine.cpp src/engine.h src/arrayconfig.h \
+	modules/association/association.cpp modules/association/association.h
 
 xgettext \
 	--package-name=fcitx5-array \
@@ -19,7 +20,8 @@ xgettext \
 	--keyword=Keywords \
 	-j \
 	-o po/fcitx5-array.pot \
-	src/array.conf.in src/array-addon.conf.in.in
+	src/array.conf.in src/array-addon.conf.in.in \
+	modules/association/association.conf.in.in
 
 ## To re-generate from scratch:
 #msginit -l zh_TW.UTF-8 --no-translator -o po/zh_TW.po -i po/fcitx5-array.pot
