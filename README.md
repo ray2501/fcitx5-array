@@ -29,13 +29,14 @@ Array 30 input method engine for Fcitx 5 project
 - 使用 Fcitx 5 notifications 模組實作特別碼通知，預設為 disable
 - 實作聯想詞模組，並且使用此模組支援相關字詞功能。使用者可以使用數字鍵選詞，
 並且使用 Left/Up/Page Up 與 Right/Down/Page Down/Space 翻頁，
-ESC 用來取消聯想詞，使用者也可以不理會聯想詞繼續打字，預設為 disable，
+ESC 用來取消聯想詞，使用者也可以不理會聯想詞繼續打字。預設為 disable，
 使用者可以設定切換鍵但是一開始設定的預設值並沒有設定切換鍵。
 
 與 ibus-array 相同，輸入法表格使用 SQLite3。授權方式也一樣為 GPL2+。
 
 modules 下的原始码（目前只有聯想詞模組）授權方式採用 LGPL 2.1+。
-data 下的 AssociatedPhrases.mb 檔案其內容來自 OpenVanilla 專案，授權為 MIT。
+data 下的 AssociatedPhrases.mb 檔案其內容
+來自 [OpenVanilla](https://openvanilla.org/) 專案，授權為 MIT。
 
 ## 安裝
 
