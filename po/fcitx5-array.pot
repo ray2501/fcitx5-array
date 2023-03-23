@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-23 19:56+0800\n"
+"POT-Creation-Date: 2023-03-23 20:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Lookup Array"
 msgstr ""
 
-#: modules/association/association.cpp:290
+#: modules/association/association.cpp:292
 msgid "Associated Phrases: "
 msgstr ""
 
@@ -109,4 +109,8 @@ msgstr ""
 
 #: modules/association/association.conf.in.in:3
 msgid "Associated Phrases"
+msgstr ""
+
+#: modules/association/association.conf.in.in:4
+msgid "fcitx5-array module"
 msgstr ""

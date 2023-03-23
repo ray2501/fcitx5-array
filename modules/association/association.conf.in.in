@@ -1,5 +1,6 @@
 [Addon]
 Name=Associated Phrases
+Comment=fcitx5-array module
 Category=Module
 Version=@PROJECT_VERSION@
 Library=libassociation
