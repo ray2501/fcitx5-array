@@ -48,6 +48,36 @@ Association::Association(Instance *instance) : instance_(instance) {
         instance_->watchEvent(EventType::InputContextSwitchInputMethod,
                               EventWatcherPhase::Default, reset));
 
+    eventHandlers_.emplace_back(instance->watchEvent(
+        EventType::InputContextKeyEvent, EventWatcherPhase::Default,
+        [this](Event &event) {
+            auto &keyEvent = static_cast<KeyEvent &>(event);
+            if (keyEvent.isRelease()) {
+                return;
+            }
+            if (!inWhiteList(keyEvent.inputContext())) {
+                return;
+            }
+
+            if (keyEvent.key().checkKeyList(config_.hotkey.value())) {
+                setEnabled(!enabled_, keyEvent.inputContext());
+                if (notifications()) {
+                    notifications()->call<INotifications::showTip>(
+                        "fcitx-association-toggle", _("Associated Phraes"),
+                        enabled_ ? "Enable Associated Phrases"
+                                 : "Disable Associated Phrases",
+                        _("Associated Phraes"),
+                        enabled_ ? _("Associated Phraes is enabled.")
+                                 : _("Associated Phraes is disabled."),
+                        -1);
+                }
+                keyEvent.filterAndAccept();
+                return;
+            }
+
+            return;
+        }));
+
     eventHandlers_.emplace_back(instance_->watchEvent(
         EventType::InputContextKeyEvent, EventWatcherPhase::PreInputMethod,
         [this](Event &event) {

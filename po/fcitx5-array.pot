@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-23 20:53+0800\n"
+"POT-Creation-Date: 2023-03-24 11:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,20 @@ msgstr ""
 msgid "Lookup Array"
 msgstr ""
 
-#: modules/association/association.cpp:292
+#: modules/association/association.cpp:66
+#: modules/association/association.cpp:69
+msgid "Associated Phraes"
+msgstr ""
+
+#: modules/association/association.cpp:70
+msgid "Associated Phraes is enabled."
+msgstr ""
+
+#: modules/association/association.cpp:71
+msgid "Associated Phraes is disabled."
+msgstr ""
+
+#: modules/association/association.cpp:322
 msgid "Associated Phrases: "
 msgstr ""
 

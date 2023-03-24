@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-23 20:53+0800\n"
+"POT-Creation-Date: 2023-03-24 10:57+0800\n"
 "PO-Revision-Date: 2023-03-12 19:18+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -79,7 +79,20 @@ msgstr "候選字選單方向"
 msgid "Lookup Array"
 msgstr "反查行列碼"
 
-#: modules/association/association.cpp:292
+#: modules/association/association.cpp:66
+#: modules/association/association.cpp:69
+msgid "Associated Phraes"
+msgstr "聯想詞"
+
+#: modules/association/association.cpp:70
+msgid "Associated Phraes is enabled."
+msgstr "聯想詞已使用"
+
+#: modules/association/association.cpp:71
+msgid "Associated Phraes is disabled."
+msgstr "聯想詞已禁用"
+
+#: modules/association/association.cpp:322
 msgid "Associated Phrases: "
 msgstr "聯想詞： "
 
