@@ -83,7 +83,7 @@ Association::Association(Instance *instance) : instance_(instance) {
         [this](Event &event) {
             auto &keyEvent = static_cast<KeyEvent &>(event);
             auto *inputContext = keyEvent.inputContext();
-            if (!enabled_) {
+            if (!enabled_ || !inWhiteList(inputContext)) {
                 return;
             }
 
