@@ -322,6 +322,11 @@ void Association::updateUI(InputContext *inputContext) {
             Text auxUp(_("Associated Phrases: "));
             inputContext->inputPanel().setAuxUp(auxUp);
             inputContext->updatePreedit();
+        } else {
+            /*
+             * I think it is good to clear.
+             */
+            commitstr_.clear();
         }
     }
 
