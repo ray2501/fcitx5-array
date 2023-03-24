@@ -26,7 +26,8 @@ Array 30 input method engine for Fcitx 5 project
 - 支援 Fcitx 5 chttrans 模組（繁簡轉換），預設設為 disable
 - 嘗試當應用程式支援 surrounding text，支援使用者使用 Ctrl+Alt+E 呼叫反查
 行列碼功能（按鍵可自訂，目前限制只能查詢已選字中的第一個字）
-- 使用 Fcitx 5 notifications 模組實作特別碼通知，預設為 disable
+- 使用 Fcitx 5 notifications 模組實作特別碼通知，如果使用者輸入的字有特別碼，
+而使用者並非使用特別碼時，會顯示提示，預設為 disable
 - 實作聯想詞模組，並且使用此模組支援相關字詞功能。使用者可以使用數字鍵選詞，
 並且使用 Left/Up/Page Up 與 Right/Down/Page Down/Space 翻頁，
 ESC 用來取消聯想詞，使用者也可以不理會聯想詞繼續打字。預設為 disable，
