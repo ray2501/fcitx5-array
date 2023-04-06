@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(fcitx5-array VERSION 0.9.0)
+project(fcitx5-array VERSION 0.9.1)
 
 find_package(ECM 1.0.0 REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
