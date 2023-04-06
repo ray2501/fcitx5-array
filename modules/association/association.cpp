@@ -299,6 +299,7 @@ void Association::updateUI(InputContext *inputContext) {
         candidateList->setCursorPositionAfterPaging(
             fcitx::CursorPositionAfterPaging::ResetToFirst);
         candidateList->setPageSize(10);
+        candidateList->setLayoutHint(*config_.candidateLayoutHint);
 
         auto start = map_.lower_bound(commitstr_);
         auto end = map_.end();

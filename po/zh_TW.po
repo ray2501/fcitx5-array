@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 10:57+0800\n"
+"POT-Creation-Date: 2023-04-06 17:03+0800\n"
 "PO-Revision-Date: 2023-03-12 19:18+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -43,15 +43,15 @@ msgid ""
 "bopomo"
 msgstr "1.標點 2.括號 3.符號 4.數學 5.方向 6.單位 7.圖表 8.順序 9.希臘 0.注音"
 
-#: src/arrayconfig.h:24
+#: src/arrayconfig.h:24 modules/association/association.h:19
 msgid "Not set"
 msgstr "不設定"
 
-#: src/arrayconfig.h:25
+#: src/arrayconfig.h:25 modules/association/association.h:20
 msgid "Vertical"
 msgstr "垂直"
 
-#: src/arrayconfig.h:25
+#: src/arrayconfig.h:25 modules/association/association.h:20
 msgid "Horizontal"
 msgstr "水平"
 
@@ -71,7 +71,7 @@ msgstr "使用聯想詞模組"
 msgid "QuickPhrase Trigger Key"
 msgstr "快速輸入的觸發鍵"
 
-#: src/arrayconfig.h:45
+#: src/arrayconfig.h:45 modules/association/association.h:29
 msgid "Candidate List orientation"
 msgstr "候選字選單方向"
 
@@ -92,19 +92,19 @@ msgstr "聯想詞已使用"
 msgid "Associated Phraes is disabled."
 msgstr "聯想詞已禁用"
 
-#: modules/association/association.cpp:322
+#: modules/association/association.cpp:323
 msgid "Associated Phrases: "
 msgstr "聯想詞： "
 
-#: modules/association/association.h:18
+#: modules/association/association.h:25
 msgid "Toggle key"
 msgstr "切換鍵"
 
-#: modules/association/association.h:28
+#: modules/association/association.h:40
 msgid "Enable Associated Phrases"
 msgstr "使用聯想詞"
 
-#: modules/association/association.h:29
+#: modules/association/association.h:41
 msgid "Disable Associated Phrases"
 msgstr "禁用聯想詞"
 

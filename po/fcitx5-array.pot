@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 11:13+0800\n"
+"POT-Creation-Date: 2023-04-06 17:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,15 +43,15 @@ msgid ""
 "bopomo"
 msgstr ""
 
-#: src/arrayconfig.h:24
+#: src/arrayconfig.h:24 modules/association/association.h:19
 msgid "Not set"
 msgstr ""
 
-#: src/arrayconfig.h:25
+#: src/arrayconfig.h:25 modules/association/association.h:20
 msgid "Vertical"
 msgstr ""
 
-#: src/arrayconfig.h:25
+#: src/arrayconfig.h:25 modules/association/association.h:20
 msgid "Horizontal"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "QuickPhrase Trigger Key"
 msgstr ""
 
-#: src/arrayconfig.h:45
+#: src/arrayconfig.h:45 modules/association/association.h:29
 msgid "Candidate List orientation"
 msgstr ""
 
@@ -92,19 +92,19 @@ msgstr ""
 msgid "Associated Phraes is disabled."
 msgstr ""
 
-#: modules/association/association.cpp:322
+#: modules/association/association.cpp:323
 msgid "Associated Phrases: "
 msgstr ""
 
-#: modules/association/association.h:18
+#: modules/association/association.h:25
 msgid "Toggle key"
 msgstr ""
 
-#: modules/association/association.h:28
+#: modules/association/association.h:40
 msgid "Enable Associated Phrases"
 msgstr ""
 
-#: modules/association/association.h:29
+#: modules/association/association.h:41
 msgid "Disable Associated Phrases"
 msgstr ""
 

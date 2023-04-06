@@ -12,10 +12,22 @@
 #include <fcitx/action.h>
 #include <fcitx/addoninstance.h>
 #include <fcitx/addonmanager.h>
+#include <fcitx/candidatelist.h>
 #include <fcitx/instance.h>
 
-FCITX_CONFIGURATION(AssociationConfig, fcitx::Option<fcitx::KeyList> hotkey{
-                                           this, "Hotkey", _("Toggle key")};)
+namespace fcitx {
+FCITX_CONFIG_ENUM_NAME_WITH_I18N(CandidateLayoutHint, N_("Not set"),
+                                 N_("Vertical"), N_("Horizontal"));
+} // namespace fcitx
+
+FCITX_CONFIGURATION(
+    AssociationConfig,
+    fcitx::Option<fcitx::KeyList> hotkey{this, "Hotkey", _("Toggle key")};
+    fcitx::OptionWithAnnotation<fcitx::CandidateLayoutHint,
+                                fcitx::CandidateLayoutHintI18NAnnotation>
+        candidateLayoutHint{this, "CandidateLayoutHint",
+                            _("Candidate List orientation"),
+                            fcitx::CandidateLayoutHint::NotSet};)
 
 class ToggleAction;
 
