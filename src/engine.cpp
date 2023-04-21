@@ -229,6 +229,13 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
                     event.accept();
                     candidateList->candidate(0).select(ic_);
                 }
+            } else {
+                /*
+                 * Need to clarify for this behavior.
+                 * If candidate list is empty, should I reset the status?
+                 */
+
+                reset();
             }
 
             return event.filterAndAccept();
