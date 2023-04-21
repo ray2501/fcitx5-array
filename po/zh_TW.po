@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-06 17:03+0800\n"
+"POT-Creation-Date: 2023-04-21 23:30+0800\n"
 "PO-Revision-Date: 2023-03-12 19:18+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/engine.cpp:66 src/engine.cpp:480
+#: src/engine.cpp:66 src/engine.cpp:489
 msgid "{0}: {1}"
 msgstr ""
 
@@ -37,7 +37,7 @@ msgstr "特別碼通知"
 msgid "Lookup array code: {0}"
 msgstr "反查行列碼: {0}"
 
-#: src/engine.cpp:470
+#: src/engine.cpp:479
 msgid ""
 "1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek 0."
 "bopomo"
