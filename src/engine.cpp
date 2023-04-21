@@ -187,6 +187,8 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
                         event.accept();
                         candidateList->candidate(0).select(ic_);
                     }
+                } else {
+                    reset();
                 }
             } else if (space_press_count == 1) {
                 if (auto candidateList = ic_->inputPanel().candidateList()) {
