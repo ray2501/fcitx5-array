@@ -42,12 +42,14 @@ Array 30 input method engine for Fcitx5 project.
 %files -f %{name}.lang
 %license LICENSES
 %doc README.md
+%defattr(-,root,root,-)
 %{_fcitx5_libdir}/libassociation.so
 %{_fcitx5_addondir}/association.conf
 %{_fcitx5_libdir}/array.so
 %{_fcitx5_addondir}/array.conf
 %{_fcitx5_imconfdir}/array.conf
 %{_fcitx5_imconfdir}/array.conf
+%{_fcitx5_datadir}/array
 %{_fcitx5_datadir}/array/array.db
 %{_fcitx5_datadir}/data/AssociatedPhrases.mb
 %{_datadir}/icons/hicolor/*/apps/org.fcitx.Fcitx5.fcitx-ibusarray*
