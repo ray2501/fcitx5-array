@@ -51,11 +51,8 @@ sudo dnf install fcitx5 fcitx5-autostart fcitx5-table-extra fcitx5-zhuyin fcitx5
 ```
 使用 `im-chooser` 選擇 fcitx5。
 
-openSUSE Leap 15.4 目前 Fcitx 預設安裝的版本為 4，如果要使用 Fcitx 5，需要使用下列的指令安裝
-（指令包含安裝輸入法）：
+openSUSE Leap 15.5 需要使用下列的指令安裝（指令包含安裝輸入法）：
 ```
-sudo zypper addrepo https://download.opensuse.org/repositories/M17N/15.4/M17N.repo
-sudo zypper refresh
 sudo zypper install fcitx5 fcitx5-table-extra fcitx5-zhuyin fcitx5-chewing
 ```
 在家目錄下建立 .i18n 檔案，加入下面的內容設定預設輸入法：
