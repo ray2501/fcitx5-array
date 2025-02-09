@@ -48,9 +48,7 @@ Array 30 input method engine for Fcitx5 project.
 %{_fcitx5_libdir}/array.so
 %{_fcitx5_addondir}/array.conf
 %{_fcitx5_imconfdir}/array.conf
-%{_fcitx5_imconfdir}/array.conf
 %{_fcitx5_datadir}/array
-%{_fcitx5_datadir}/array/array.db
 %{_fcitx5_datadir}/data/AssociatedPhrases.mb
 %{_datadir}/icons/hicolor/*/apps/org.fcitx.Fcitx5.fcitx-ibusarray*
 %{_datadir}/icons/hicolor/*/apps/fcitx-ibusarray*
