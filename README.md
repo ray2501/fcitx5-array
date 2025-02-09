@@ -96,6 +96,17 @@ sudo update-icon-caches /usr/share/icons/*
 sudo make uninstall
 ```
 
+注意：  
+目前在 KDE Plasma 6 環境中 fcitx5-array icon 並不會正確顯示。
+我注意到 Fcitx5 5.1.12 其它輸入法會顯示 icon 但是不是輸入法本身安裝的，
+而是來自 kf6-breeze-icons 套件（這是在 openSUSE 環境的情況）。
+我發現將自製的 fcitx-ibusarray.svg 複製到 breeze 與 breeze-dark 相關的目錄，
+重開機以後就可以正確顯示 icon
+（路徑為 /usr/share/icons/breeze/status/22 與 /usr/share/icons/breeze-dark/status/22）。
+但是考慮到只有 KDE Plasma 6 才需要這個做法，所以我只上傳測試用的 fcitx-ibusarray.svg，
+以及寫下目前的狀況。
+
+
 ## 工具
 
 原始碼 data 目錄下除了輸入法表格檔案 array.db，還有來自
