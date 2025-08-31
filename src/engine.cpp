@@ -63,7 +63,7 @@ public:
                         std::string keystr =
                             (ctx->get())->get_preedit_string(candidates[0]);
                         std::string msg =
-                            fmt::format(_("{0}: {1}"), choiceword, keystr);
+                            fmt::format(fmt::runtime(_("{0}: {1}")), choiceword, keystr);
 
                         std::vector<std::string> actions = {"Ok", _("Ok")};
                         engine_->notifications()
@@ -130,7 +130,7 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
                 // Just get the first word and handle
                 std::string word = std::string(std::begin(range).view());
                 std::string msg =
-                    fmt::format(_("Lookup array code: {0}"), word);
+                    fmt::format(fmt::runtime(_("Lookup array code: {0}")), word);
                 ic_->inputPanel().setAuxUp(fcitx::Text(msg));
 
                 std::vector<std::string> result =
@@ -486,7 +486,7 @@ void ArrayState::updatePreedit() {
 
         if (result.size() == 1) {
             std::string msg =
-                fmt::format(_("{0}: {1}"), result[0], preeditstring);
+                fmt::format(fmt::runtime(_("{0}: {1}")), result[0], preeditstring);
             ic_->inputPanel().setAuxDown(fcitx::Text(msg));
         }
     }
