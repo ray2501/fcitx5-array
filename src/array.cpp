@@ -10,7 +10,11 @@
  GNU General Public License for more details.
 */
 
+#ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
 #include <fcitx-utils/standardpath.h>
+#else
+#include <fcitx-utils/standardpaths.h>
+#endif
 #include <string>
 #include <vector>
 
@@ -54,8 +58,13 @@ const char *valid_key_map[] = {
 };
 
 ArrayContext::ArrayContext() {
+#ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
     std::string FILE_PATH = fcitx::StandardPath::global().locate(
         fcitx::StandardPath::Type::PkgData, "array/array.db");
+#else
+    std::string FILE_PATH = fcitx::StandardPaths::global().locate(
+        fcitx::StandardPathsType::PkgData, "array/array.db");
+#endif
 
     if (FILE_PATH.empty()) {
         FCITX_INFO() << "Error: not found array.db!!!";

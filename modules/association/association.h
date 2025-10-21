@@ -78,7 +78,11 @@ public:
     void updateUI(fcitx::InputContext *inputContext);
 
 private:
+#ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
     void load(fcitx::StandardPathFile &file);
+#else
+    void load(int fd);
+#endif
     std::multimap<std::string, std::string> map_;
     std::string commitstr_;
     bool isNeedUpdate = false;

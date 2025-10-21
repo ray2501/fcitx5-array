@@ -13,6 +13,13 @@ find_package(SQLite3 REQUIRED)
 find_package(Gettext REQUIRED)
 find_package(fmt REQUIRED)
 
+# Check Fcitx5Utils version
+MESSAGE(STATUS "Found Fcitx5Utils (version \"${Fcitx5Utils_VERSION}\")")
+if (Fcitx5Utils_VERSION VERSION_LESS "5.1.13")
+    MESSAGE(STATUS "Use FCITX5 legacy API <standardpath.h>")
+    add_compile_definitions(USE_FCITX5_LEGACY_API_STANDARDPATH=1)
+endif()
+
 # Setup some compiler option that is generally useful and compatible with Fcitx 5 (C++17)
 include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cmake")
 add_definitions(-DFCITX_GETTEXT_DOMAIN=\"fcitx5-array\")

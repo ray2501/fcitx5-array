@@ -7,7 +7,12 @@
 #include "notifications_public.h"
 #include <fcitx-config/iniparser.h>
 #include <fcitx-utils/i18n.h>
+#ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
 #include <fcitx-utils/standardpath.h>
+#else
+#include <fcitx-utils/standardpaths.h>
+#include <fcitx-utils/fdstreambuf.h>
+#endif
 #include <fcitx-utils/utf8.h>
 #include <fcitx/addonfactory.h>
 #include <fcitx/inputcontext.h>
@@ -202,11 +207,19 @@ Association::Association(Instance *instance) : instance_(instance) {
 
 void Association::reloadConfig() {
     map_.clear();
+#ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
     auto file = StandardPath::global().open(
         StandardPath::Type::PkgData, "data/AssociatedPhrases.mb", O_RDONLY);
 
     if (file.fd() >= 0) {
         load(file);
+#else
+    auto file = StandardPaths::global().open(
+        StandardPathsType::PkgData, "data/AssociatedPhrases.mb");
+
+    if(file.isValid()) {
+        load(file.fd());
+#endif
     }
 
     readAsIni(config_, "conf/association.conf");
@@ -216,6 +229,7 @@ bool Association::inWhiteList(InputContext *inputContext) const {
     return toggleAction_.isParent(&inputContext->statusArea());
 }
 
+#ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
 void Association::load(StandardPathFile &file) {
     UniqueFilePtr fp = fs::openFD(file, "rb");
     if (!fp) {
@@ -232,6 +246,18 @@ void Association::load(StandardPathFile &file) {
             continue;
         }
         std::string_view text(strBuf.data() + start, end - start);
+#else
+void Association::load(int fd) {
+    IFDStreamBuf buf(fd);
+    std::istream in(&buf);
+    std::string line;
+    while (std::getline(in, line)) {
+        auto [start, end] = stringutils::trimInplace(line);
+        if (start == end) {
+            continue;
+        }
+        std::string_view text(line.data() + start, end - start);
+#endif
         if (!utf8::validate(text)) {
             continue;
         }
