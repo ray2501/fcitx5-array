@@ -7,7 +7,7 @@ Version:        0.9.6
 Release:        0
 Summary:        Array 30 input method engine for Fcitx5
 License:        GPL-2.0-or-later and LGPL-2.1-or-later
-URL:            https://github.com/ray2501/fcitx5-ray2501
+URL:            https://github.com/ray2501/fcitx5-array
 Source:         %{name}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  extra-cmake-modules
