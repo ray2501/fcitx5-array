@@ -32,7 +32,10 @@ REGION_UNIFIED_ExtD  = 7
 REGION_UNIFIED_ExtE  = 8
 REGION_UNIFIED_ExtF  = 9
 REGION_UNIFIED_ExtG  = 10
-REGION_ARRAY_SYMBOL  = 11
+REGION_UNIFIED_ExtH  = 11
+REGION_UNIFIED_ExtI  = 12
+REGION_UNIFIED_ExtJ  = 13
+REGION_ARRAY_SYMBOL  = 14
 
 STR_UNIFIED_Base = "CJK Unified Ideographs Base"
 STR_ARRAY_SPECIAL = "Special Codes"
@@ -44,7 +47,10 @@ STR_UNIFIED_ExtD  = "CJK Unified Ideographs Extension D"
 STR_UNIFIED_ExtE  = "CJK Unified Ideographs Extension E"
 STR_UNIFIED_ExtF  = "CJK Unified Ideographs Extension F"
 STR_UNIFIED_ExtG  = "CJK Unified Ideographs Extension G"
-STR_ARRAY_SYMBOL  = "CJK Symbols & Punctuation (w+0~9)"
+STR_UNIFIED_ExtH  = "CJK Unified Ideographs Extension H"
+STR_UNIFIED_ExtI  = "CJK Unified Ideographs Extension I"
+STR_UNIFIED_ExtJ  = "CJK Unified Ideographs Extension J"
+STR_ARRAY_SYMBOL  = "CJK Symbols & Punctuation"
 
 REG_STACK = []
 
@@ -98,6 +104,18 @@ def array_updatedb(table_file):
                 print("Enter: " + STR_UNIFIED_ExtG)
                 REG_STACK.append(REGION_UNIFIED_ExtG)
 
+            elif(ln == "# Begin of " + STR_UNIFIED_ExtH):
+                print("Enter: " + STR_UNIFIED_ExtH)
+                REG_STACK.append(REGION_UNIFIED_ExtH)
+
+            elif(ln == "# Begin of " + STR_UNIFIED_ExtI):
+                print("Enter: " + STR_UNIFIED_ExtI)
+                REG_STACK.append(REGION_UNIFIED_ExtI)
+
+            elif(ln == "# Begin of " + STR_UNIFIED_ExtJ):
+                print("Enter: " + STR_UNIFIED_ExtJ)
+                REG_STACK.append(REGION_UNIFIED_ExtJ)
+
             elif(ln == "# Begin of " + STR_ARRAY_SYMBOL):
                 print("Enter: " + STR_ARRAY_SYMBOL)
                 REG_STACK.append(REGION_ARRAY_SYMBOL)
@@ -140,6 +158,18 @@ def array_updatedb(table_file):
 
             elif(ln == "# End of " + STR_UNIFIED_ExtG):
                 print("Exit: " + STR_UNIFIED_ExtG)
+                REG_STACK.pop()
+
+            elif(ln == "# End of " + STR_UNIFIED_ExtH):
+                print("Exit: " + STR_UNIFIED_ExtH)
+                REG_STACK.pop()
+
+            elif(ln == "# End of " + STR_UNIFIED_ExtI):
+                print("Exit: " + STR_UNIFIED_ExtI)
+                REG_STACK.pop()
+
+            elif(ln == "# End of " + STR_UNIFIED_ExtJ):
+                print("Exit: " + STR_UNIFIED_ExtJ)
                 REG_STACK.pop()
 
             elif(ln == "# End of " + STR_ARRAY_SYMBOL):

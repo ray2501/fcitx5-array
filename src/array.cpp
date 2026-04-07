@@ -215,7 +215,7 @@ ArrayContext::get_reverted_key_candidates_from_main(std::string ch) {
 
     int retcode;
     retcode = sqlite3_prepare_v2(this->conn,
-                                 "SELECT keys FROM main WHERE cat!=11 AND ch=?",
+                                 "SELECT keys FROM main WHERE cat!=14 AND ch=?",
                                  -1, &stmt, NULL);
     if (retcode == SQLITE_OK) {
         sqlite3_bind_text(stmt, 1, ch.c_str(), -1, SQLITE_TRANSIENT);

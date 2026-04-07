@@ -326,6 +326,13 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
         updatePreedit();
         setSymLookupTable();
         return event.filterAndAccept();
+    } else if (buffer_.size() == 2 && buffer_.userInput().at(0) == 'h' &&
+        buffer_.userInput().at(1) == 'g' && event.key().isDigit()) {
+        buffer_.type(event.key().sym());
+
+        updatePreedit();
+        setSymLookupTable();
+        return event.filterAndAccept();
     } else if (event.key().isDigit()) {
         if (auto candidateList = ic_->inputPanel().candidateList()) {
             int idx = event.key().keyListIndex(selectionKeys());

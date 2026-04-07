@@ -119,7 +119,7 @@ sudo make uninstall
 cin2sqlite.py 負責更新 main，也就是主要的輸入法表格，
 使用範例如下：
 ```
-./cin2sqlite.py array30-OpenVanilla-big-v2023-1.0-20230211.cin
+./cin2sqlite.py array30-OpenVanilla-big-v2026-1.01-20260406.cin
 ```
 updateSimple.py 負責更新 simple，也就是一級簡碼與二級簡碼的表格，使用範例如下：
 ```
