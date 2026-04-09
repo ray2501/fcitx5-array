@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-array\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-12 09:54+0800\n"
+"POT-Creation-Date: 2026-04-09 11:22+0800\n"
 "PO-Revision-Date: 2023-03-13 09:54+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/engine.cpp:66 src/engine.cpp:489
+#: src/engine.cpp:66 src/engine.cpp:495
 #, c++-format
 msgid "{0}: {1}"
 msgstr ""
@@ -39,10 +39,10 @@ msgstr "特别码通知"
 msgid "Lookup array code: {0}"
 msgstr "反查行列码: {0}"
 
-#: src/engine.cpp:479
+#: src/engine.cpp:486
 msgid ""
-"1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek 0."
-"bopomo"
+"1.comma 2.bracket 3.symbol 4.math 5.arrow 6.unit 7.table 8.roman 9.greek "
+"0.bopomo"
 msgstr "1.标点 2.括号 3.符号 4.数学 5.方向 6.单位 7.图表 8.顺序 9.希腊 0.注音"
 
 #: src/arrayconfig.h:24 modules/association/association.h:19
@@ -81,20 +81,20 @@ msgstr "侯选字列表方向"
 msgid "Lookup Array"
 msgstr "反查行列码"
 
-#: modules/association/association.cpp:66
-#: modules/association/association.cpp:69
+#: modules/association/association.cpp:71
+#: modules/association/association.cpp:74
 msgid "Associated Phraes"
 msgstr "联想词"
 
-#: modules/association/association.cpp:70
+#: modules/association/association.cpp:75
 msgid "Associated Phraes is enabled."
 msgstr "联想词已使用"
 
-#: modules/association/association.cpp:71
+#: modules/association/association.cpp:76
 msgid "Associated Phraes is disabled."
 msgstr "联想词已禁用"
 
-#: modules/association/association.cpp:323
+#: modules/association/association.cpp:349
 msgid "Associated Phrases: "
 msgstr "联想词： "
 
@@ -110,22 +110,22 @@ msgstr "使用联想词"
 msgid "Disable Associated Phrases"
 msgstr "禁用联想词"
 
-#: src/array.conf.in:3
+#: src/array.conf.in:2
 msgid "Array"
 msgstr "行列"
 
-#: src/array-addon.conf.in.in:3
+#: src/array-addon.conf.in.in:2
 msgid "Array30 for Fcitx 5"
 msgstr "Fcitx 5 的行列三十输入法"
 
-#: src/array-addon.conf.in.in:4
+#: src/array-addon.conf.in.in:3
 msgid "Array30 Input Method"
 msgstr "行列三十输入法"
 
-#: modules/association/association.conf.in.in:3
+#: modules/association/association.conf.in.in:2
 msgid "Associated Phrases"
 msgstr "联想词"
 
-#: modules/association/association.conf.in.in:4
+#: modules/association/association.conf.in.in:3
 msgid "fcitx5-array module"
 msgstr "fcitx5-array 模组"

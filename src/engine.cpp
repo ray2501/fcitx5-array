@@ -62,8 +62,8 @@ public:
                     if (candidates.size() == 1) {
                         std::string keystr =
                             (ctx->get())->get_preedit_string(candidates[0]);
-                        std::string msg =
-                            fmt::format(fmt::runtime(_("{0}: {1}")), choiceword, keystr);
+                        std::string msg = fmt::format(
+                            fmt::runtime(_("{0}: {1}")), choiceword, keystr);
 
                         std::vector<std::string> actions = {"Ok", _("Ok")};
                         engine_->notifications()
@@ -129,8 +129,8 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
 
                 // Just get the first word and handle
                 std::string word = std::string(std::begin(range).view());
-                std::string msg =
-                    fmt::format(fmt::runtime(_("Lookup array code: {0}")), word);
+                std::string msg = fmt::format(
+                    fmt::runtime(_("Lookup array code: {0}")), word);
                 ic_->inputPanel().setAuxUp(fcitx::Text(msg));
 
                 std::vector<std::string> result =
@@ -327,7 +327,7 @@ void ArrayState::keyEvent(fcitx::KeyEvent &event) {
         setSymLookupTable();
         return event.filterAndAccept();
     } else if (buffer_.size() == 2 && buffer_.userInput().at(0) == 'h' &&
-        buffer_.userInput().at(1) == 'g' && event.key().isDigit()) {
+               buffer_.userInput().at(1) == 'g' && event.key().isDigit()) {
         buffer_.type(event.key().sym());
 
         updatePreedit();
@@ -492,8 +492,8 @@ void ArrayState::updatePreedit() {
             (ctx->get())->get_reverted_char_candidates_from_special(input);
 
         if (result.size() == 1) {
-            std::string msg =
-                fmt::format(fmt::runtime(_("{0}: {1}")), result[0], preeditstring);
+            std::string msg = fmt::format(fmt::runtime(_("{0}: {1}")),
+                                          result[0], preeditstring);
             ic_->inputPanel().setAuxDown(fcitx::Text(msg));
         }
     }
