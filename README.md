@@ -127,6 +127,6 @@ updateSimple.py 負責更新 simple，也就是一級簡碼與二級簡碼的表
 ```
 updatePhrase.py 負責更新 phrase，也就是詞庫的表格，使用範例如下：
 ```
-./updatePhrase.py array30-phrase-20210725.txt
+./updatePhrase.py array30-phrase-20260528.txt
 ```
 
