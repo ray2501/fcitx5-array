@@ -69,7 +69,7 @@ ArrayContext::ArrayContext() {
     if (FILE_PATH.empty()) {
         FCITX_INFO() << "Error: not found array.db!!!";
     } else {
-        FCITX_INFO() << "OK: found array.db!!!";
+        FCITX_INFO() << "OK: found array.db at " << FILE_PATH;
     }
 
     if (sqlite3_open(FILE_PATH.c_str(), &(this->conn)) != SQLITE_OK) {
