@@ -333,7 +333,11 @@ void Association::updateUI(InputContext *inputContext) {
         if (map_.count(commitstr_)) {
             unsigned int index = 0;
             for (; start != end; start++) {
+#if (__cplusplus >= 202002L)
+                if (!(start->first).starts_with(commitstr_)) {
+#else
                 if (!stringutils::startsWith(start->first, commitstr_)) {
+#endif
                     break;
                 }
 
