@@ -10,8 +10,8 @@
 #ifdef USE_FCITX5_LEGACY_API_STANDARDPATH
 #include <fcitx-utils/standardpath.h>
 #else
-#include <fcitx-utils/standardpaths.h>
 #include <fcitx-utils/fdstreambuf.h>
+#include <fcitx-utils/standardpaths.h>
 #endif
 #include <fcitx-utils/utf8.h>
 #include <fcitx/addonfactory.h>
@@ -214,10 +214,10 @@ void Association::reloadConfig() {
     if (file.fd() >= 0) {
         load(file);
 #else
-    auto file = StandardPaths::global().open(
-        StandardPathsType::PkgData, "data/AssociatedPhrases.mb");
+    auto file = StandardPaths::global().open(StandardPathsType::PkgData,
+                                             "data/AssociatedPhrases.mb");
 
-    if(file.isValid()) {
+    if (file.isValid()) {
         load(file.fd());
 #endif
     }
