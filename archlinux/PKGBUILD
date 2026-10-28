@@ -1,0 +1,49 @@
+# Contributor: Raphanus Lo <coldturnip at gmail dot com>
+# Contributor: CToID <funk443 at yahoo dot com dot tw>
+#
+# When releasing a new version, bump pkgver (and reset pkgrel to 1) together
+# with CMakeLists.txt and fcitx5-array.spec; no other change is needed.
+
+pkgname=fcitx5-array
+pkgver=1.0.4
+pkgrel=1
+pkgdesc='Array 30 input method engine for Fcitx5'
+arch=('x86_64')
+url='https://github.com/ray2501/fcitx5-array'
+# MIT: data/AssociatedPhrases.mb comes from the OpenVanilla project
+license=('GPL-2.0-or-later' 'LGPL-2.1-or-later' 'MIT')
+depends=(
+  'fcitx5'
+  'fmt'
+  'glibc'
+  'hicolor-icon-theme'
+  'libgcc'
+  'libstdc++'
+  'sqlite'
+)
+makedepends=(
+  'cmake'
+  'extra-cmake-modules'
+  'git'
+)
+optdepends=('fcitx5-chinese-addons: full-width and Traditional/Simplified Chinese conversion support')
+_ovcommit=268c0f8701a8f35a3b753ed110f9dee7aa49e7dc
+source=("git+$url.git#tag=$pkgver"
+        "LICENSE-OpenVanilla.txt::https://raw.githubusercontent.com/openvanilla/openvanilla/$_ovcommit/LICENSE.txt")
+# The git tag cannot be checksummed here: its tree contains this PKGBUILD.
+sha256sums=('SKIP'
+            '7646e19980bc0de3006e201ef2a690bcb49fbd780067815a33a716f0b7caa15b')
+
+build() {
+  cmake -B build -S "$pkgname" \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -Wno-dev
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 LICENSE-OpenVanilla.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
+}
