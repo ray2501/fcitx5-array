@@ -77,6 +77,10 @@ sudo dnf install cmake extra-cmake-modules gettext \
 sudo zypper in cmake extra-cmake-modules gettext \
     fcitx5-devel fcitx5-chinese-addons-devel sqlite3-devel fmt-devel
 ```
+如果是 Arch Linux 需要安裝下列的開發用套件（gettext 已包含在 base-devel 中）：
+```
+sudo pacman -S --needed base-devel cmake extra-cmake-modules fcitx5 sqlite fmt
+```
 
 然後在專案的目錄下執行以下指令：
 ```
@@ -95,6 +99,15 @@ sudo update-icon-caches /usr/share/icons/*
 ```
 sudo make uninstall
 ```
+
+Arch Linux 也可以使用 `archlinux` 目錄下的 PKGBUILD 建立套件，交由 pacman 安裝與管理：
+```
+sudo pacman -S --needed base-devel
+cd archlinux
+makepkg -si
+```
+PKGBUILD 會從 GitHub 取得 `pkgver` 所對應 tag 的原始碼，而不是使用目前目錄中的原始碼。
+如果要移除，執行 `sudo pacman -R fcitx5-array`。
 
 注意：  
 目前在 KDE Plasma 6 環境中 fcitx5-array icon 並不會正確顯示。

@@ -1,0 +1,6 @@
+src/
+pkg/
+fcitx5-array/
+LICENSE-OpenVanilla.txt
+*.pkg.tar.*
+*.log
