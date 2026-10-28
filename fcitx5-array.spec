@@ -6,7 +6,7 @@ Name:           fcitx5-array
 Version:        1.0.4
 Release:        0
 Summary:        Array 30 input method engine for Fcitx5
-License:        GPL-2.0-or-later and LGPL-2.1-or-later
+License:        GPL-2.0-or-later and LGPL-2.1-or-later and MIT
 URL:            https://github.com/ray2501/fcitx5-array
 Source:         %{name}-%{version}.tar.gz
 BuildRequires:  cmake
