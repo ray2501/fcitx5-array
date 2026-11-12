@@ -18,7 +18,7 @@ def array_updatedb(table_file, table):
 
 	# update the database
 	for i, j in k:
-		cur.execute('INSERT INTO ' + table + ' (keys, ch) VALUES ("' + i + '", "' + j + '");')
+		cur.execute(f'INSERT INTO {table} (keys, ch) VALUES (?, ?);', (i, j))
 
 	con.commit()
 	con.close()

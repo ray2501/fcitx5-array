@@ -190,7 +190,7 @@ def array_updatedb(table_file):
                     # Write data to SQL Database
                     r = (str(REG_STACK[-1]) + "\t" + ln).split()
                     print(r)
-                    cur.execute('INSERT INTO main (keys, ch, cat, cnt) VALUES ("' + r[1] + '", "' + r[2] + '", "' + r[0] + '", "0")') 
+                    cur.execute('INSERT INTO main (keys, ch, cat, cnt) VALUES (?, ?, ?, ?);', (r[1], r[2], r[0], '0'))
 
         f.close()
         con.commit()
